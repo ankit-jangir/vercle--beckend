@@ -16,19 +16,19 @@ development: {
     host: "127.0.0.1",
     dialect: "postgres",
   },
-  // production: {
-  //   "username": serverConfig.LIVE_DB.user,
-  //   "password": serverConfig.LIVE_DB.pass,
-  //   "database": serverConfig.LIVE_DB.name,
-  //   "host": serverConfig.LIVE_DB.host,
-  //   "port":serverConfig.LIVE_DB.port,
-  //   "dialect": "postgres",
-  //   "pool": {
-  //     max: 20,     // try increasing
-  //     min: 0,
-  //     acquire: 30000,  // wait time before timeout
-  //     idle: 10000
-  //   }
-  // },
+  production: {
+    "username": serverConfig.LIVE_DB.user,
+    "password": serverConfig.LIVE_DB.pass,
+    "database": serverConfig.LIVE_DB.name,
+    "host": serverConfig.LIVE_DB.host,
+    "port":serverConfig.LIVE_DB.port,
+    "dialect": "postgres",
+    "pool": {
+      max: 20,     // try increasing
+      min: 0,
+      acquire: 30000,  // wait time before timeout
+      idle: 10000
+    }
+  },
 };
 
