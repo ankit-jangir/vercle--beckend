@@ -4,6 +4,7 @@ const redisConfig = {
   host: REDIS.host,
   password: REDIS.password,
   port: REDIS.port,
+   tls: {},
   maxRetriesPerRequest: null,
   maxRetriesPerRequest: null,
   reconnectOnError: function (err) {
