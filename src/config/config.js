@@ -2,13 +2,13 @@ const serverConfig = require("./server.config");
 const dotenv = require("dotenv")
 // console.log(process.env,"sdff")
 module.exports = {
-development: {
-  username: "postgres",
-  password: "12345",
-  database: "zeniushub_dev",
-  host: "127.0.0.1",
-  dialect: "postgres"
-},
+  development: {
+    username: "postgres",
+    password: "12345",
+    database: "zeniushub_dev",
+    host: "127.0.0.1",
+    dialect: "postgres"
+  },
   test: {
     username: "root",
     password: null,
@@ -21,8 +21,14 @@ development: {
     "password": serverConfig.LIVE_DB.pass,
     "database": serverConfig.LIVE_DB.name,
     "host": serverConfig.LIVE_DB.host,
-    "port":serverConfig.LIVE_DB.port,
+    "port": serverConfig.LIVE_DB.port,
     "dialect": "postgres",
+    dialectOptions: {
+      ssl: {
+        require: true,      // SSL must be required
+        rejectUnauthorized: false // Allow self-signed certificates (Neon recommends this)
+      }
+    },
     "pool": {
       max: 20,     // try increasing
       min: 0,
